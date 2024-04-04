@@ -1,0 +1,39 @@
+{
+	"info": {
+		"_postman_id": "f7c302e8-6213-4e12-9a79-4b8252d8cae1",
+		"name": "Postman_Testing",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "19574828"
+	},
+	"item": [
+		{
+			"name": "http://localhost:9091/pdf/generate",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"seller\": \"XYZ Pvt. Ltd.\",\r\n  \"sellerGstin\": \"29AABBCCDD121ZD\",\r\n  \"sellerAddress\": \"New Delhi, India\",\r\n  \"buyer\": \"Vedant Computers\",\r\n  \"buyerGstin\": \"29AABBCCDD131ZD\",\r\n  \"buyerAddress\": \"New Delhi, India\",\r\n  \"items\": [\r\n    {\r\n      \"name\": \"Product 1\",\r\n      \"quantity\": \"12 Nos\",\r\n      \"rate\": 123.00,\r\n      \"amount\": 1476.00\r\n    }\r\n  ]\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:9091/pdf/generate",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9091",
+					"path": [
+						"pdf",
+						"generate"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

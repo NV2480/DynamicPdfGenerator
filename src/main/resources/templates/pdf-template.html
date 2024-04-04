@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8"/>
+    <title>PDF Template</title>
+    <style>
+    table {
+        width: 100%;
+        border-collapse: collapse;
+    }
+
+    table, th, td {
+        border: none;
+    }
+
+    th, td {
+        padding: 5px;
+        text-align: left;
+    }
+
+    th:first-child,
+    td:first-child {
+        border-left: 1px solid black;
+    }
+
+    th:last-child,
+    td:last-child {
+        border-right: 1px solid black;
+    }
+
+    .border-top {
+        border-top: 1px solid black;
+    }
+
+    .border-bottom {
+        border-bottom: 1px solid black;
+    }
+
+    .border-left {
+        border-left: 1px solid black;
+    }
+
+    .border-right {
+        border-right: 1px solid black;
+    }
+
+    .border-left {
+        border-left: 1px solid black;
+    }
+
+    .border-right {
+        border-right: 1px solid black;
+    }
+</style>
+
+</head>
+<body>
+<table>
+    <tr>
+        <td class="border-top border-left" colspan="2">Seller:</td>
+        <td class="border-top border-left" colspan="2">Buyer:</td>
+    </tr>
+    <tr>
+        <td class="border-left" colspan="2" th:text="${data.seller}"></td>
+        <td class="border-left" colspan="2" th:text="${data.buyer}"></td>
+    </tr>
+    <tr>
+        <td class="border-left" colspan="2" th:text="${data.sellerAddress}"></td>
+        <td class="border-left" colspan="2" th:text="${data.buyerAddress}"></td>
+    </tr>
+    <tr>
+        <td class="border-left" colspan="2" th:text="'GSTIN: ' + ${data.sellerGstin}"></td>
+        <td class="border-left" colspan="2" th:text="'GSTIN: ' + ${data.buyerGstin}"></td>
+    </tr>
+
+    <tr>
+        <td class="border-left border-bottom" colspan="4"></td>
+    </tr>
+    <tr>
+        <th class="border-left">Item</th>
+        <th class="border-left">Quantity</th>
+        <th class="border-left">Rate</th>
+        <th class="border-left border-right">Amount</th>
+    </tr>
+    <tr th:each="item, i : ${data.items}">
+        <td class="border-left border-top" th:text="${item.name}"></td>
+        <td class="border-left border-top" th:text="${item.quantity}"></td>
+        <td class="border-left border-top" th:text="${item.rate}"></td>
+        <td class="border-left border-right border-top" th:text="${item.amount}"></td>
+    </tr>
+
+
+
+    <!--    <tr th:each="item, i : ${data.items}">-->
+<!--        <th class="border-left" th:text="${item.name}" ></th>-->
+<!--        <th class="border-left" th:text="${item.quantity}" ></th>-->
+<!--        <th class="border-left">Rate1</th>-->
+<!--        <th class="border-left border-right">Amount1</th>-->
+<!--    </tr>-->
+
+
+
+    <!--    <tr>-->
+<!--        <td class="border-left" colspan="4"></td>-->
+<!--    </tr>-->
+
+    <tr>
+        <td class="border-left border-top" colspan="4"></td>
+    </tr>
+    <tr>
+        <td colspan="4"></td>
+    </tr>
+
+
+
+
+    <!--    <tr>-->
+<!--        <td class="border-left border-top border-bottom"></td>-->
+<!--        <td class="border-left border-top border-bottom"></td>-->
+<!--        <td class="border-left border-top border-bottom"></td>-->
+<!--        <td class="border-left border-right border-top border-bottom"></td>-->
+<!--    </tr>-->
+
+    <tr>
+        <td colspan="4"></td>
+    </tr>
+
+    <tr>
+        <td class="border-left border-bottom" colspan="4"></td>
+    </tr>
+</table>
+</body>
+</html>
